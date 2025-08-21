@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polícia Federal</title>
+    <style>
+
+        body {
+            background-color: darkgreen;
+            color: yellow;
+            font: normal 1em sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            gap: 20px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            font: bold 1em sans-serif;
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sistema de Nacionalidades</h1>
+    <strong>País de Nascimento:</strong> <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Enviar" id="botao" onclick="verificar()">
+    <div id="res">
+
+    </div>
+    <script>
+        var pais = window.document.getElementById('txtpais');
+        var res = window.document.querySelector('div#res');
+        function verificar() {
+            if (pais.value.toLowerCase() == 'brasil') {
+                res.innerHTML = '<p>Você é <strong>Brasileiro</strong>!</p>';
+                res.style.color = 'yellow';
+            } else {
+                res.innerHTML ='<p>Você é <strong>Estrangeiro</strong>!</p>';
+                res.style.color = 'darkred';
+            }
+        }
+    </script>
+</body>
+
+</html>
